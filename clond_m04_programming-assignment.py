@@ -29,16 +29,16 @@ my_cursor.execute("create table book (title text, author text, year int)")
 my_db.commit()
 
 # 16.5 work
-import csv
-insert_query = 'insert into book values(?, ?, ?)'
-
-
-with open('books2.csv', 'rt') as infile:
-    books = csv.DictReader(infile)
-    for book in books:
-        my_cursor.execute(insert_query, (book['title'], book['author'], book['year']))
-
-my_db.commit()
+#import csv
+#insert_query = 'insert into book values(?, ?, ?)'
+#
+#
+#with open('books2.csv', 'rt') as infile:
+#    books = csv.DictReader(infile)
+#    for book in books:
+#        my_cursor.execute(insert_query, (book['title'], book['author'], book['year']))
+#
+#my_db.commit()
 
 import sqlalchemy
 my_connection = sqlalchemy.create_engine('sqlite:///books.db')
